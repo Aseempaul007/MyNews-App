@@ -2,7 +2,7 @@ package com.example.mynewsapp.Models;
 
 import java.util.ArrayList;
 
-public class UpperModelClass {
+public class  UpperModelClass {
 
     String status;
     int totalResults;

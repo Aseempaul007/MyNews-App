@@ -3,19 +3,20 @@ package com.example.mynewsapp.Utilities;
 import com.example.mynewsapp.RetrofitInterface;
 
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MyUtilities {
 
-    Retrofit retrofit = null;
+    public static Retrofit retrofit = null;
 
 
-    public Retrofit getRetrofitInstance(Retrofit retrofit){
+    public static RetrofitInterface getRetrofitInstance(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(RetrofitInterface.baseurl)
-                    .addConverterFactory(Gso)
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-        return retrofit;
+        return retrofit.create(RetrofitInterface.class);
     }
 }
